@@ -1,5 +1,7 @@
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
+#include "stdio.h"
+#include "time.h"
 #include "util.h"
 
 int main()
@@ -7,8 +9,14 @@ int main()
     CU_pSuite pSuite = NULL;
     void testDateString()
     {
-        date_string();
-        CU_ASSERT(0 == 0);
+        time_t rawtime;
+        struct tm * timeinfo;
+        char test_string [50];
+
+        time (&rawtime);
+        timeinfo = localtime (&rawtime);
+        strftime(test_string,50,"%m-%d-%Y",timeinfo);
+        CU_ASSERT_STRING_EQUAL(date_string(),test_string);
     }
     /* initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
