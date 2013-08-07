@@ -1,6 +1,6 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-char * date_string();
+void date_string(char* string_loc);
 
 #endif

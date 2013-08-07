@@ -3,14 +3,12 @@
 
 #include "util.h"
 
-char * date_string()
+void date_string(char* string_loc)
 {
     time_t rawtime;
     struct tm * timeinfo;
-    char date_string [50];
 
     time (&rawtime);
     timeinfo = localtime (&rawtime);
-    strftime(date_string,50,"%m-%d-%Y",timeinfo);
-    return date_string;
+    strftime(string_loc,11,"%m-%d-%Y",timeinfo);
 }

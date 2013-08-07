@@ -1,7 +1,11 @@
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
 #include "util.h"
-
+/*! \brief Brief description.
+ *         Brief description continued.
+ *
+ *  Detailed description starts here.
+ */
 int main()
 {
     CU_pSuite pSuite = NULL;

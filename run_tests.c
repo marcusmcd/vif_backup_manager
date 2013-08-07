@@ -11,12 +11,15 @@ int main()
     {
         time_t rawtime;
         struct tm * timeinfo;
-        char test_string [50];
+        char test_string [11];
+        char new_string [11];
 
         time (&rawtime);
         timeinfo = localtime (&rawtime);
-        strftime(test_string,50,"%m-%d-%Y",timeinfo);
-        CU_ASSERT_STRING_EQUAL(date_string(),test_string);
+        strftime(test_string,11,"%m-%d-%Y",timeinfo);
+
+        date_string(new_string);
+        CU_ASSERT_STRING_EQUAL(new_string,test_string);
     }
     /* initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
