@@ -1,9 +1,11 @@
+/*! 
+ *  @name    Not Sure What To Put Here
+ */
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
 #include "util.h"
 /*! \brief Brief description.
  *         Brief description continued.
- *
  *  Detailed description starts here.
  */
 int main()
@@ -22,4 +24,11 @@ int main()
     CU_basic_run_tests();
     CU_cleanup_registry();
     return CU_get_error();
+}
+/*! This function takes nothing and returns nothing.
+ *  @param [in] stuff A stuff container for stuff.
+ */ 
+int foo_bar(int stuff)
+{
+    void foo;
 }
