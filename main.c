@@ -1,13 +1,15 @@
 /*! 
- *  @name    Not Sure What To Put Here
+ * \mainpage Utility for managing VIF backup files
+ *
+ * This utility is meant to automate the process of moving backups created by VIF 
+ * from the VIF server to our backup server, name the files with the correct current 
+ * date, and delete old backup files that are no longer needed.
+ *  
  */
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
 #include "util.h"
-/*! \brief Brief description.
- *         Brief description continued.
- *  Detailed description starts here.
- */
+
 int main()
 {
     CU_pSuite pSuite = NULL;
