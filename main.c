@@ -5,6 +5,9 @@
  * from the VIF server to our backup server, name the files with the correct current 
  * date, and delete old backup files that are no longer needed.
  *  
+ *  @file   main.c
+ *  @brief  Main entry point for VIF Backup Manager.
+ *
  */
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
