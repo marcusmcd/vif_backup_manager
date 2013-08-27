@@ -8,6 +8,6 @@ util:
 	#gcc -o util util.o -lcunit
 buildtests:
 	gcc -Wall -I/usr/local/include/cunit -c run_tests.c
-	gcc -o run_tests run_tests.o main.o util.o -lcunit
+	gcc -o run_tests run_tests.o util.o -lcunit
 test:
 	./run_tests
