@@ -1,0 +1,6 @@
+\indexentry{main.\discretionary {-}{}{}c@{main.\discretionary {-}{}{}c}|hyperpage}{7}
+\indexentry{main.\discretionary {-}{}{}c@{main.\discretionary {-}{}{}c}!foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar@{foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar}|hyperpage}{7}
+\indexentry{foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar@{foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar}!main.c@{main.\discretionary {-}{}{}c}|hyperpage}{7}
+\indexentry{util.\discretionary {-}{}{}c@{util.\discretionary {-}{}{}c}|hyperpage}{7}
+\indexentry{util.\discretionary {-}{}{}c@{util.\discretionary {-}{}{}c}!date\discretionary {-}{}{}\_\discretionary {-}{}{}string@{date\discretionary {-}{}{}\_\discretionary {-}{}{}string}|hyperpage}{8}
+\indexentry{date\discretionary {-}{}{}\_\discretionary {-}{}{}string@{date\discretionary {-}{}{}\_\discretionary {-}{}{}string}!util.c@{util.\discretionary {-}{}{}c}|hyperpage}{8}

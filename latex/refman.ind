@@ -1,0 +1,23 @@
+\begin{theindex}
+
+  \item {date\discretionary {-}{}{}\_\discretionary {-}{}{}string}
+    \subitem {util.\discretionary {-}{}{}c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{7}
+
+  \indexspace
+
+  \item {main.\discretionary {-}{}{}c}, \hyperpage{7}
+    \subitem {foo\discretionary {-}{}{}\_\discretionary {-}{}{}bar}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {util.\discretionary {-}{}{}c}, \hyperpage{7}
+    \subitem {date\discretionary {-}{}{}\_\discretionary {-}{}{}string}, 
+		\hyperpage{8}
+
+\end{theindex}

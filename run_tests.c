@@ -1,13 +1,27 @@
+/*!
+ *  @file   run_tests.c
+ *  @brief  Unit tests for VIF Backup Manager.
+ */
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
 #include "stdio.h"
 #include "time.h"
+#include "unistd.h"
+
 #include "util.h"
 
 int main()
 {
+    /*! The test suite */
     CU_pSuite pSuite = NULL;
-    void testDateString()
+
+    /*! Tests date_string() by basicly doing exactly what date_string() does
+     *  and then testing that the result matches the value returned from 
+     *  date_string(). This probobly seems redundant, but the main thing this
+     *  test is doing is verifying that the interface of this fuction hasn't
+     *  changed.
+     */ 
+    void test_date_string()
     {
         time_t rawtime;
         struct tm * timeinfo;
@@ -21,11 +35,24 @@ int main()
         date_string(new_string);
         CU_ASSERT_STRING_EQUAL(new_string,test_string);
     }
+    /*! Tests copy_backup_file() by attempting to access the test file that
+     *  was copied by the fuction during the test call. Uses the POSIX access()
+     *  fuction to do that. the F_OK parameter on the call to access() checks
+     *  for existence of the file.
+     */ 
+    void test_copy_backup_file()
+    {
+        copy_backup_file("test_file","/tmp/test_file");
+        int access_result = access("/tmp/test_file", F_OK);
+        CU_ASSERT(access_result == 0);
+    }
+
     /* initialize the CUnit test registry */
     if (CUE_SUCCESS != CU_initialize_registry())
         return CU_get_error();
     pSuite = CU_add_suite("Suite_1",NULL,NULL); //Create test suite
-    CU_add_test(pSuite, "test date_string()", testDateString); //Add test
+    CU_add_test(pSuite, "test date_string()", test_date_string); //Add test
+    CU_add_test(pSuite, "test copy_backup_file()", test_copy_backup_file);
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
     CU_cleanup_registry();

@@ -21,3 +21,8 @@ void date_string(char* string_loc)
     timeinfo = localtime (&rawtime);
     strftime(string_loc,11,"%m-%d-%Y",timeinfo);
 }
+
+void copy_backup_file(char* source_file_path,char* dest_file_path)
+{
+
+}
