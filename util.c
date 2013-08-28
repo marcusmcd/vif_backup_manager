@@ -4,6 +4,7 @@
  */
 #include "stdio.h"
 #include "time.h"
+#include "unistd.h"
 
 #include "util.h"
 
@@ -24,5 +25,18 @@ void date_string(char* string_loc)
 
 void copy_backup_file(char* source_file_path,char* dest_file_path)
 {
-
+    pid_t pid;
+    pid = fork();
+    if (pid == 0) 
+    {
+        
+    }
+    else if (pid < 0) 
+    {
+        
+    }
+    else 
+    {
+        
+    }
 }
