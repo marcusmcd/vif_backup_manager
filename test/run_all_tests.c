@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <check.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "../src/util.h"
 
@@ -32,12 +33,26 @@ START_TEST(test_date_string)
 }
 END_TEST
 
+/*! Tests copy_backup_file() by attempting to access the test file that
+ *  was copied by the fuction during the test call. Uses the POSIX access()
+ *  fuction to do that. the F_OK parameter on the call to access() checks
+ *  for existence of the file.
+ */ 
+START_TEST(test_copy_backup_file)
+{
+    copy_backup_file("test_file","/tmp/test_file");
+    int access_result = access("/tmp/test_file", F_OK);
+    ck_assert_int_eq(access_result,0);
+}
+END_TEST
+
 Suite *test_suite (void)
 {
     Suite *s = suite_create("test");
     TCase *tc_core = tcase_create("Core");
 
     tcase_add_test(tc_core, test_date_string);
+    tcase_add_test(tc_core, test_copy_backup_file);
 
     suite_add_tcase (s, tc_core);
     return s;
