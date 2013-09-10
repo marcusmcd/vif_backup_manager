@@ -2,11 +2,13 @@
  *  @file   run_all_tests.c
  *  @brief  Unit tests for VIF Backup Manager.
  */
-#include "config.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "check.h"
-#include "time.h"
+#include <config.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <check.h>
+#include <time.h>
+
+#include "../src/util.h"
 
 /*! Tests date_string() by basicly doing exactly what date_string() does
  *  and then testing that the result matches the value returned from 
