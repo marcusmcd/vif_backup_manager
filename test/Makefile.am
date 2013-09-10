@@ -2,5 +2,5 @@ bin_PROGRAMS = run_all_tests
 check_PROGRAMS = run_all_tests
 run_all_tests_CPPFLAGS = $(CHECK_CFLAGS)
 run_all_tests_LDFLAGS= $(CHECK_LIBS)
-run_all_tests_SOURCES = run_all_tests.c
+run_all_tests_SOURCES = run_all_tests.c ../src/util.c ../src/util.h
 TESTS = run_all_tests
