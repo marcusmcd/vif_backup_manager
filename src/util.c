@@ -23,6 +23,14 @@ void date_string(char* string_loc)
     strftime(string_loc,11,"%m-%d-%Y",timeinfo);
 }
 
+/*! Takes two strings containing a source file path and a destination file
+ *  path. Copies the file from the source to the destination. Designed to be
+ *  called for a single file. User should have checked for existence of the
+ *  file before calling this function.
+ *
+ *  @param [in] source_file_path A string containing a source file path.
+ *  @param [in] dest_file_path A string containing a destination file path.
+ */ 
 void copy_backup_file(char* source_file_path,char* dest_file_path)
 {
     pid_t pid;
@@ -37,6 +45,6 @@ void copy_backup_file(char* source_file_path,char* dest_file_path)
     }
     else 
     {
-        
+        wait();
     }
 }
