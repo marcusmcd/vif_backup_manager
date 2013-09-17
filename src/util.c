@@ -33,11 +33,19 @@ void date_string(char* string_loc)
  */ 
 void copy_backup_file(char* source_file_path,char* dest_file_path)
 {
+    int access_result = access(source_file_path, F_OK);
     pid_t pid;
     pid = fork();
     if (pid == 0) 
     {
-        
+        if (access_result == 0)
+        {
+            execl("/bin/cp", "/bin/cp", source_file_path, dest_file_path, (char *)0);
+        }
+        else
+        {
+            printf("Error: The specified file does not exist.");
+        }
     }
     else if (pid < 0) 
     {
