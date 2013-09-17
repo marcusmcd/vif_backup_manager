@@ -8,6 +8,7 @@
 #include <check.h>
 #include <time.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #include "../src/util.h"
 
@@ -40,9 +41,17 @@ END_TEST
  */ 
 START_TEST(test_copy_backup_file)
 {
-    copy_backup_file("test_file","/tmp/test_file");
-    int access_result = access("/tmp/test_file", F_OK);
+    /* Setup */
+    open("test_file", O_RDWR | O_CREAT, S_IRUSR | S_IRGRP | S_IROTH);
+    mkdir("tmp", S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    /* Test */
+    copy_backup_file("test_file","./tmp/test_file");
+    int access_result = access("./tmp/test_file", F_OK);
     ck_assert_int_eq(access_result,0);
+    /* Teardown */
+    remove("test_file");
+    remove("./tmp/test_file");
+    remove("tmp");
 }
 END_TEST
 

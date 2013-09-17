@@ -49,7 +49,7 @@ void copy_backup_file(char* source_file_path,char* dest_file_path)
     }
     else if (pid < 0) 
     {
-        
+        printf("Error: Error forking process.");
     }
     else 
     {
